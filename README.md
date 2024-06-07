@@ -49,3 +49,13 @@ zone "." IN {
 * sidneypio/bind-inf534 : nome da imagem;
 * /usr/sbin/named -f -c /etc/bind/named.conf : comando utilizado na inicialização.
 
+## Possível erro 
+- ao tentar executar o comando 'docker run' pode-se obter o seguinte erro:
+```
+docker: Error response from daemon: Conflict. The container name "/dns" is already in use by container "b65ffc564b27a2bc80a805a161803b955a9f8599b6b94d7e38c802f7035c61cc". You have to remove (or rename) that container to be able to reuse that name.
+``` 
+- isso pode ocorrer se já existir um container com o nome "dns" associado. Pode-se usar a seguinte sequência de comandos para parar e remover o container dns:
+  ```
+  docker stop dns
+  docker rm dns
+  ```
