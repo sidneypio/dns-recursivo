@@ -1,10 +1,9 @@
-Sobre a atividade
+# Introdução
 Vamos criar um servidor de DNS com docker para entender o funcionamento de um servidor de DNS recursivo.
-Roteiro
-Em uma máquina Linux com docker instalado e com acesso à Internet (pode ser a VM disponibilizada), deve-se executar os comandos:
-mkdir dns-recursivo
-cd dns-recursivo
-mkdir home
+
+# Roteiro
+- Em uma máquina Linux com docker instalado e com acesso à Internet, deve-se clonar (ou copiar) o repositório [https://github.com/sidneypio/dns-recursivo]. Se o git estiver instalado, pode-ser usar o seguinte comando:
+- git clone 
 criar o arquivo named.conf-recursivo com o seguinte conteúdo:
 options {
 	directory "/var/bind";
