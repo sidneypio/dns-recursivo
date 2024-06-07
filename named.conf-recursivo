@@ -1,0 +1,35 @@
+options {
+	directory "/var/bind";
+
+	allow-recursion {
+		127.0.0.1/32;
+	};
+
+	// Configure the IPs to listen on here.
+	listen-on { 127.0.0.1; };
+	listen-on-v6 { none; };
+
+	pid-file "/var/run/named/named.pid";
+
+	allow-transfer { none; };
+};
+
+zone "." IN {
+	type hint;
+	file "named.ca";
+};
+
+zone "localhost" IN {
+	type master;
+	file "pri/localhost.zone";
+	allow-update { none; };
+	notify no;
+};
+
+zone "127.in-addr.arpa" IN {
+	type master;
+	file "pri/127.zone";
+	allow-update { none; };
+	notify no;
+};
+
