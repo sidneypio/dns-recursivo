@@ -6,9 +6,9 @@ Vamos criar um servidor de DNS com docker para entender o funcionamento de um se
 	- git clone https://github.com/sidneypio/dns-recursivo.git
 - Será copiada a estrutura de diretórios e arquivos básicos de configuração.
 - Para executar o container, podemos usar o comando (tudo em única linha):
-	- docker run -tid --name dns -v ./named.conf-recursivo:/etc/bind/named.conf -v ./home:/home sidneypio/bind-inf534 /usr/sbin/named -f -c /etc/bind/named.conf 
+	- docker run -tid --name dns-recursivo -v ./named.conf-recursivo:/etc/bind/named.conf -v ./home:/home sidneypio/bind-inf534 /usr/sbin/named -f -c /etc/bind/named.conf 
 - Podemos acessar o container através do comando:
-	- docker exec -it dns /bin/bash
+	- docker exec -it dns-recursivo /bin/bash
 - no ambiente do container, podemos fazer testes de consulta ao DNS, por exemplo:
 	- host -vvv -4 -t A www.unicamp.br 127.0.0.1
 	- host -vvv -4 -t A www.iqm.unicamp.br 127.0.0.1
