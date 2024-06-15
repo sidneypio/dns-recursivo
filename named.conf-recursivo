@@ -12,6 +12,15 @@ options {
 	pid-file "/var/run/named/named.pid";
 
 	allow-transfer { none; };
+
+        //forwarders {
+        //      1.1.1.1;
+        //};
+
+
+	dns64 64:ff9b::/96 {
+    		clients { any; };
+	};
 };
 
 zone "." IN {
